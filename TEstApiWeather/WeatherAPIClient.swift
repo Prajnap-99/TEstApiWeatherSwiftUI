@@ -28,7 +28,6 @@ class WeatherAPIClient {
                 completion(.failure(NSError(domain: "No data", code: 0, userInfo: nil)))
                 return
             }
-            
             do {
                 let weatherData = try JSONDecoder().decode(WeatherModal.self, from: data)
                 completion(.success(weatherData))
